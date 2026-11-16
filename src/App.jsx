@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './components/MainLayout';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -10,7 +10,7 @@ import Mathematics from './Pages/mathematics/mathematics';
 import Science from './Pages/science/science';
 import History from './Pages/history/History';
 import Games from './Pages/games/Games';
-import Quiz from './Pages/quiz/Quiz';                  // <-- Make sure this is imported
+import Quiz from './Pages/quiz/Quiz';
 import AITutor from "./Pages/ai-tutor/ai-tutor.jsx";
 
 function App() {
@@ -31,6 +31,9 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/ai-tutor" element={<AITutor />} />
         </Route>
+
+        {/* Catch-all fallback redirecting to login */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Router>
   );
