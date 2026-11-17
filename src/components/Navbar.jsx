@@ -35,9 +35,14 @@ const Navbar = ({ childName = "Alex", stars = 12, coins = 150 }) => {
         </button>
 
         {/* User Profile Avatar */}
-        <div className="w-10 h-10 rounded-2xl bg-indigo-500 border-2 border-indigo-300 flex items-center justify-center text-white font-bold shadow-md cursor-pointer hover:scale-105 transition-transform">
-          <User className="w-5 h-5" />
-        </div>
+        {/* User Profile Avatar */}
+<button
+  onClick={() => console.log("Profile clicked")}
+  className="w-10 h-10 rounded-2xl bg-indigo-500 border-2 border-indigo-300 flex items-center justify-center text-white font-bold shadow-md cursor-pointer hover:scale-105 hover:bg-indigo-600 transition-transform focus:outline-none focus:ring-2 focus:ring-indigo-400"
+  aria-label="Open user profile"
+>
+  <User className="w-5 h-5" />
+</button>
       </div>
     </header>
   );
